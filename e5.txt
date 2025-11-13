@@ -1,0 +1,6 @@
+import numpy as np
+from statsmodels.stats.proportion import proportions_ztest
+
+z, p = proportions_ztest([120,150], [1000,1200])
+print(f"Z = {z:.3f}\nP = {p:.5f}")
+print("Reject H₀ There is a significant difference in conversion rates between A and B." if p < 0.05 else "Fail to reject H₀  No significant difference in conversion rates between A and B.")
